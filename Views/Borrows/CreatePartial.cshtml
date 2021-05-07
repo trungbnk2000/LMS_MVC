@@ -1,0 +1,59 @@
+﻿@model QLTV.EF.Borrow
+<html>
+<head>
+    <meta name="viewport" content="width=device-width" />
+    <title>Create</title>
+</head>
+<body>
+    @using (Html.BeginForm())
+    {
+        @Html.ValidationSummary(true)
+        <h3>Add Borrow </h3>
+        <div class="editor-label">
+            @Html.LabelFor(model => model.MemberID)
+        </div>
+        <div class="editor-field">
+            @Html.TextBoxFor(model => model.MemberID, new { @class = "form-control" })
+            @Html.ValidationMessageFor(model => model.MemberID)
+        </div>
+        <div class="editor-label">
+            @Html.LabelFor(model => model.BookID)
+        </div>
+        <div class="editor-field">
+            @Html.TextBoxFor(model => model.BookID, new { @class = "form-control" })
+            @Html.ValidationMessageFor(model => model.BookID)
+        </div>
+        <div class="editor-label">
+            @Html.LabelFor(model => model.Description)
+        </div>
+        <div class="editor-field">
+            @Html.TextBoxFor(model => model.Description, new { @class = "form-control" })
+            @Html.ValidationMessageFor(model => model.Description)
+        </div>
+        <div class="editor-label">
+            @Html.LabelFor(model => model.BorrowDate)
+        </div>
+        <div class="editor-field">
+            @Html.TextBoxFor(model => model.BorrowDate, new { @class = "form-control",@type="datetime-local" })
+            @Html.ValidationMessageFor(model => model.BorrowDate)
+        </div>
+        <div class="editor-label">
+            @Html.LabelFor(model => model.ExpiredDate)
+        </div>
+        <div class="editor-field">
+            @Html.TextBoxFor(model => model.ExpiredDate, new { @class = "form-control", @type = "datetime-local" })
+            @Html.ValidationMessageFor(model => model.ExpiredDate)
+        </div>
+        <div class="editor-label">
+            @Html.LabelFor(model => model.Admin)
+        </div>
+        <div class="editor-field">
+            @Html.TextBoxFor(model => model.Admin, new { @class = "form-control" })
+            @Html.ValidationMessageFor(model => model.Admin)
+        </div>
+        <p>
+            <input type="submit" value="Save" class="btn btn-primary" onclick="AddData();" />
+        </p>
+    }
+</body>
+</html>

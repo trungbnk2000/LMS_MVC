@@ -1,0 +1,42 @@
+﻿@model QLTV.EF.BookCategory
+<!DOCTYPE html>
+<html>
+<head>
+    <link rel="stylesheet" href="http://code.jquery.com/ui/1.10.3/themes/smoothness/jquery-ui.css">
+    <script src="http://code.jquery.com/jquery-1.9.1.js"></script>
+    <script src="http://code.jquery.com/ui/1.10.3/jquery-ui.js"></script>
+    <script>
+    $(document).ready(function () {
+        $('#DelButton').click(function () {
+            alert("Confirm Delete");
+            $("#dialog").dialog();
+        });
+    });
+    </script>
+    <meta name="viewport" content="width=device-width" />
+</head>
+<body>
+    <h3>Are you sure you want to delete this?</h3>
+    <div class="display-label" style="display:none;">
+        @Html.DisplayNameFor(model => model.ID)
+    </div>
+    <div class="display-field" style="display:none;">
+        @Html.DisplayFor(model => model.ID)
+    </div>
+    <div class="display-label ">
+        <label style="font-family:'Bookman Old Style';">Name</label>
+    </div>
+    <div class="display-field">
+        @Html.DisplayFor(model => model.Name)
+    </div>
+   
+    @using (Html.BeginForm("DeletePartial", "BookCategories"))
+    {
+        <p>
+            <br />
+            @Html.HiddenFor(model => model.ID)
+            <input type="submit" value="Delete" id="DelButton" class="btn btn-danger" />
+        </p>
+    }
+</body>
+</html>

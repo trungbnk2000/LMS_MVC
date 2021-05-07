@@ -1,0 +1,94 @@
+﻿
+
+@model QLTV.EF.Book
+
+<html>
+<head>
+    <meta name="viewport" content="width=device-width" />
+    <title>Create</title>
+</head>
+<body>
+    @using (Html.BeginForm())
+    {
+        @Html.ValidationSummary(true)
+        <h3>Add Category</h3>
+        <div class="editor-label">
+            @Html.LabelFor(model => model.Name)
+        </div>
+        <div class="editor-field">
+            @Html.TextBoxFor(model => model.Name, new { @class = "form-control" })
+            @Html.ValidationMessageFor(model => model.Name)
+        </div>
+        <div class="editor-label">
+            @Html.LabelFor(model => model.Author)
+        </div>
+        <div class="editor-field">
+            @Html.TextBoxFor(model => model.Author, new { @class = "form-control" })
+            @Html.ValidationMessageFor(model => model.Author)
+        </div>
+        <div class="editor-label">
+            @Html.LabelFor(model => model.CategoryID)
+        </div>
+        <div class="editor-field">
+            @Html.TextBoxFor(model => model.CategoryID, new { @class = "form-control" })
+            @Html.ValidationMessageFor(model => model.CategoryID)
+        </div>
+        <div class="editor-label">
+            @Html.LabelFor(model => model.Language)
+        </div>
+        <div class="editor-field">
+            @Html.TextBoxFor(model => model.Language, new { @class = "form-control" })
+            @Html.ValidationMessageFor(model => model.Language)
+        </div>
+        <div class="editor-label">
+            @Html.LabelFor(model => model.YearOfPublishment)
+        </div>
+        <div class="editor-field">
+            @Html.TextBoxFor(model => model.YearOfPublishment, new { @class = "form-control" })
+            @Html.ValidationMessageFor(model => model.YearOfPublishment)
+        </div>
+        <div class="editor-label">
+            @Html.LabelFor(model => model.Translator)
+        </div>
+        <div class="editor-field">
+            @Html.TextBoxFor(model => model.Translator, new { @class = "form-control" })
+            @Html.ValidationMessageFor(model => model.Translator)
+        </div>
+        <div class="editor-label">
+            @Html.LabelFor(model => model.Publisher)
+        </div>
+        <div class="editor-field">
+            @Html.TextBoxFor(model => model.Publisher, new { @class = "form-control" })
+            @Html.ValidationMessageFor(model => model.Publisher)
+        </div>
+        <div class="editor-label">
+            @Html.LabelFor(model => model.StorageLocation)
+        </div>
+        <div class="editor-field">
+            @Html.TextBoxFor(model => model.StorageLocation, new { @class = "form-control" })
+            @Html.ValidationMessageFor(model => model.StorageLocation)
+        </div>
+        <div class="editor-label">
+            @Html.LabelFor(model => model.Performance)
+        </div>
+        <div class="editor-field">
+            @Html.TextBoxFor(model => model.Performance, new { @class = "form-control" })
+            @Html.ValidationMessageFor(model => model.Performance)
+        </div>
+        <div class="editor-label">
+            @Html.LabelFor(model => model.Quantity)
+        </div>
+        <div class="editor-field">
+            @Html.TextBoxFor(model => model.Quantity, new { @class = "form-control" })
+            @Html.ValidationMessageFor(model => model.Quantity)
+        </div>
+        <div class="editor-label">
+            @Html.LabelFor(model => model.RentedCount)
+        </div>
+        
+        <p>
+            <input type="submit" value="Save" class="btn btn-primary" onclick="AddData();" />
+        </p>
+    }
+</body>
+</html>

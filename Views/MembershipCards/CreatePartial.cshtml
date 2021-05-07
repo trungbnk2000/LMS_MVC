@@ -1,0 +1,54 @@
+﻿
+@model QLTV.EF.MembershipCard
+
+<html>
+<head>
+    <meta name="viewport" content="width=device-width" />
+    <title>Create</title>
+</head>
+<body>
+    @using (Html.BeginForm())
+    {
+        @Html.ValidationSummary(true)
+        <h3>Add Category</h3>
+        <div class="editor-label">
+            @Html.LabelFor(model => model.Name)
+        </div>
+        <div class="editor-field">
+            @Html.TextBoxFor(model => model.Name, new { @class = "form-control" })
+            @Html.ValidationMessageFor(model => model.Name)
+        </div>
+        <div class="editor-label">
+            @Html.LabelFor(model => model.Job)
+        </div>
+        <div class="editor-field">
+            @Html.TextBoxFor(model => model.Job, new { @class = "form-control" })
+            @Html.ValidationMessageFor(model => model.Job)
+        </div>
+        <div class="editor-label">
+            @Html.LabelFor(model => model.CreatedDate)
+        </div>
+        <div class="editor-field">
+            @Html.TextBoxFor(model => model.CreatedDate, new { @class = "form-control", @type = "datetime-local" })
+            @Html.ValidationMessageFor(model => model.CreatedDate)
+        </div>
+        <div class="editor-label">
+            @Html.LabelFor(model => model.ExpiredDate)
+        </div>
+        <div class="editor-field">
+            @Html.TextBoxFor(model => model.ExpiredDate, new { @class = "form-control" , @type = "datetime-local" })
+            @Html.ValidationMessageFor(model => model.ExpiredDate)
+        </div>
+        <div class="editor-label">
+            @Html.LabelFor(model => model.CreatedBy)
+        </div>
+        <div class="editor-field">
+            @Html.TextBoxFor(model => model.CreatedBy, new { @class = "form-control" })
+            @Html.ValidationMessageFor(model => model.CreatedBy)
+        </div>
+        <p>
+            <input type="submit" value="Save" class="btn btn-primary" onclick="AddData();" />
+        </p>
+    }
+</body>
+</html>
